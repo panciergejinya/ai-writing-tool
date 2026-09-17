@@ -1,6 +1,13 @@
+import os
+
 import streamlit as st
+from dotenv import load_dotenv
 
 st.set_page_config(page_title="AIライティングツール", page_icon="🖋️")
+
+load_dotenv()
+if not os.environ.get("GEMINI_API_KEY"):
+    st.error("GEMINI_API_KEY が未設定です。.env ファイルを作成してキーを設定してください。")
 
 st.title("🖋️ AIライティングツール")
 st.write(

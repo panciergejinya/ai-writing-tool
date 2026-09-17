@@ -21,6 +21,7 @@ if st.button("生成", type="primary"):
     else:
         with st.spinner("生成中..."):
             try:
+                st.session_state.pop("blog_result", None)
                 prompt = build_blog_prompt(topic=topic, length=length, tone=tone)
                 result = generate_text(prompt)
                 st.session_state["blog_result"] = result

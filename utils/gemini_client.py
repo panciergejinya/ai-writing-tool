@@ -19,4 +19,7 @@ def generate_text(prompt: str) -> str:
         model=MODEL_NAME,
         contents=prompt,
     )
-    return response.text
+    text = response.text
+    if not text:
+        raise RuntimeError("生成結果が空でした。入力内容を変えて再度お試しください。")
+    return text

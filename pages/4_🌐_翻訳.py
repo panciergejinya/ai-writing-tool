@@ -21,6 +21,7 @@ if st.button("生成", type="primary"):
     else:
         with st.spinner("翻訳中..."):
             try:
+                st.session_state.pop("translation_result", None)
                 prompt = build_translation_prompt(text=text, direction=direction, tone=tone)
                 result = generate_text(prompt)
                 st.session_state["translation_result"] = result

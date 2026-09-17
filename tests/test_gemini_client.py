@@ -30,3 +30,18 @@ def test_generate_text_returns_response_text(monkeypatch):
         contents="プロンプト",
     )
     assert result == "生成されたテキスト"
+
+
+def test_generate_text_raises_when_response_text_is_none(monkeypatch):
+    monkeypatch.setenv("GEMINI_API_KEY", "dummy-key")
+    mock_response = MagicMock()
+    mock_response.text = None
+
+    mock_client_instance = MagicMock()
+    mock_client_instance.models.generate_content.return_value = mock_response
+
+    with patch(
+        "utils.gemini_client.genai.Client", return_value=mock_client_instance
+    ):
+        with pytest.raises(RuntimeError, match="生成結果が空でした"):
+            generate_text("プロンプト")

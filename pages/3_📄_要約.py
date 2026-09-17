@@ -20,6 +20,7 @@ if st.button("生成", type="primary"):
     else:
         with st.spinner("生成中..."):
             try:
+                st.session_state.pop("summary_result", None)
                 prompt = build_summary_prompt(text=text, length=length)
                 result = generate_text(prompt)
                 st.session_state["summary_result"] = result

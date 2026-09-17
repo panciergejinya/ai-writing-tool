@@ -22,6 +22,8 @@
    streamlit run app.py
    ```
 
+   `streamlit` コマンドが見つからない場合は `python -m streamlit run app.py` を使用してください。
+
 ## 機能一覧
 
 - 📝 ブログ記事執筆

@@ -23,6 +23,7 @@ if st.button("生成", type="primary"):
     else:
         with st.spinner("生成中..."):
             try:
+                st.session_state.pop("email_result", None)
                 prompt = build_email_reply_prompt(
                     original_email=original_email, direction=direction, tone=tone
                 )
