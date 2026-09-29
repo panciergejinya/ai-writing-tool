@@ -11,7 +11,7 @@
 
 - Python
 - Streamlit(マルチページアプリ)
-- Gemini API(`google-genai` 公式SDK、モデル: `gemini-2.5-flash`)
+- Gemini API(`google-genai` 公式SDK、モデル: `gemini-3.6-flash`)
 - `python-dotenv`(APIキー管理)
 
 ## アーキテクチャ・ディレクトリ構成
@@ -78,7 +78,7 @@ AI_app/
 
 ### `utils/gemini_client.py`
 
-- 公式SDK `google-genai` を使用、モデルは `gemini-2.5-flash`。
+- 公式SDK `google-genai` を使用、モデルは `gemini-3.6-flash`。
 - `generate_text(prompt: str) -> str` の1関数を提供。内部でクライアント初期化・呼び出し・例外catchを行う。
 - `.env`に`GEMINI_API_KEY`が無い場合はアプリ起動時に`st.error`で警告し、以降の処理を止める。
 

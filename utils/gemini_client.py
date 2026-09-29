@@ -5,7 +5,7 @@ from google import genai
 
 load_dotenv()
 
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.6-flash"
 
 
 def generate_text(prompt: str) -> str:

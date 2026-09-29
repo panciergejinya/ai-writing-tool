@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Gemini APIモデルは `gemini-2.5-flash` を使用する(設計書より)。
+- Gemini APIモデルは `gemini-3.6-flash` を使用する(設計書より)。
 - APIキーは`.env`の`GEMINI_API_KEY`から`python-dotenv`で読み込む。DB・認証機能は実装しない。
 - 生成履歴は保存しない。`st.session_state`での一時保持のみ(ページリロードで消える)。
 - 要約AIの入力はテキスト貼り付けのみ対応(ファイルアップロード・URL取得は対象外)。
@@ -160,7 +160,7 @@ def test_generate_text_returns_response_text(monkeypatch):
 
     mock_client_cls.assert_called_once_with(api_key="dummy-key")
     mock_client_instance.models.generate_content.assert_called_once_with(
-        model="gemini-2.5-flash",
+        model="gemini-3.6-flash",
         contents="プロンプト",
     )
     assert result == "生成されたテキスト"
@@ -181,7 +181,7 @@ from google import genai
 
 load_dotenv()
 
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.6-flash"
 
 
 def generate_text(prompt: str) -> str:

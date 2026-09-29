@@ -31,4 +31,4 @@ if st.button("生成", type="primary"):
 
 if "summary_result" in st.session_state:
     st.markdown("### 要約結果")
-    st.markdown(st.session_state["summary_result"])
+    st.text_area("要約文", st.session_state["summary_result"], height=250)

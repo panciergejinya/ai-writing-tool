@@ -18,11 +18,13 @@
 
 3. アプリを起動
 
-   ```bash
-   streamlit run app.py
-   ```
+   `start.bat` をダブルクリック(またはターミナルで `start.bat` を実行)。
 
-   `streamlit` コマンドが見つからない場合は `python -m streamlit run app.py` を使用してください。
+   手動で起動する場合は以下のコマンドを使用してください。
+
+   ```bash
+   venv\Scripts\streamlit run app.py
+   ```
 
 ## 機能一覧
 

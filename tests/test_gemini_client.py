@@ -26,7 +26,7 @@ def test_generate_text_returns_response_text(monkeypatch):
 
     mock_client_cls.assert_called_once_with(api_key="dummy-key")
     mock_client_instance.models.generate_content.assert_called_once_with(
-        model="gemini-2.5-flash",
+        model="gemini-3.6-flash",
         contents="プロンプト",
     )
     assert result == "生成されたテキスト"
